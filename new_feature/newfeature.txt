@@ -1,0 +1,27 @@
+new feature to develop in the local first, branch 1
+
+This is a nice and clean way to work with git. I suggest you always proceed like this :
+
+----A---B---C--     (REMOTE, master)
+
+            |
+            |       (Pull to local : `git pull origin master`)
+            v
+
+----A---B---C--     (LOCAL, master)
+
+Then create a branch from your local master (git checkout -b branch1), work on it, commit your changes and push to remote :
+
+----A---B---C------     (REMOTE, master)
+
+----A---B---C---D--     (REMOTE, branch1)
+
+               ^
+               |
+               |        (Push to remote : `git push origin branch1`)
+
+----A---B---C------     (LOCAL, master)
+             \
+              D----     (LOCAL, branch1)
+
+Then, when you're happy with your feature/fix/whatever, you can merge branch1 into master.
